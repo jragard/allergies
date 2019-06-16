@@ -1,0 +1,10 @@
+html
+    head
+        title= Allergies
+    body
+        a(href="http://localhost:3000") Back
+        h3= `${name}'s Allergies`
+        hr
+        div
+            each allergy in data
+                h4= `Allergy: ${allergy.name} - Severity: ${allergy.severity}`
