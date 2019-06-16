@@ -3,12 +3,16 @@ html
         title= 'Patient Allergies'
     body
         div
+            h3 Access List Of All Patients
+            a(href="http://localhost:3000/all") All Patients
+            hr
+        div
             form(
                 action="http://localhost:3000/allergies"
                 method="post"
                 enctype="application/x-www-form-urlencoded"
             )
-                h3 Look Up Patient Allergies
+                h3 Look Up Allergies For Individual Patient
                 label(for="id") Patient ID Number
                 br
                 input(type="number" name="id")

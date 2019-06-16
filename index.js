@@ -15,13 +15,19 @@ const client = new Client({
     database: "patient-allergies"
 });
 
-// class Allergy {
-//     constructor(name, severity, patientId) {
-//       this.name = name;
-//       this.severity = severity;
-//       this.patientId = patientId;
-//     }
-//   }
+app.get("/all", (req, res) => {
+    client.query(
+        "SELECT * FROM patients",
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send();
+            }
+            console.log(result.rows);
+            res.status(201).render('patients', { data: result.rows })
+        }
+    )
+})
 
 app.post("/patient", (req, res) => {
     client.query(

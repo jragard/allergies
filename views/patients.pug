@@ -1,0 +1,11 @@
+html
+    head
+        title= 'Patients'
+    body
+        a(href="http://localhost:3000") Back
+        div
+            h3 All Patients
+            hr
+        div
+            each patient in data
+                h4= `${patient.name} - ID: ${patient.id}`
