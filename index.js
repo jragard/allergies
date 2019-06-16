@@ -1,6 +1,7 @@
 const { Client } = require("pg");
 const express = require("express");
 const bodyParser = require('body-parser');
+const Allergy  = require("./class/allergy");
 
 const app = express();
 
@@ -14,13 +15,13 @@ const client = new Client({
     database: "patient-allergies"
 });
 
-class Allergy {
-    constructor(name, severity, patientId) {
-      this.name = name;
-      this.severity = severity;
-      this.patientId = patientId;
-    }
-  }
+// class Allergy {
+//     constructor(name, severity, patientId) {
+//       this.name = name;
+//       this.severity = severity;
+//       this.patientId = patientId;
+//     }
+//   }
 
 app.post("/patient", (req, res) => {
     client.query(
